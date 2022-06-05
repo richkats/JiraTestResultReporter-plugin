@@ -1,6 +1,6 @@
 JiraTestResultReporter
 ======================
-
+*
 **Hello! Thank you for your interest in contributing to this plugin! If you were looking for the previous versions, please checkout the 1.x branch**
 
 ### How to submit a bug report/feature request
