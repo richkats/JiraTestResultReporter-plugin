@@ -188,6 +188,12 @@ public class VariableExpander {
                 return expandVariables(test, envVars, JiraUtils.getJiraDescriptor().getDefaultDescription());
             }
         });
+        expanders.put("DEFAULT_JOB", new Delegate() {
+            @Override
+            public String expand(TestResult test, EnvVars envVars) {
+                return expandVariables(test, envVars, JiraUtils.getJiraDescriptor().getDefaultJob());
+            }
+        });
     }
 
     /**
