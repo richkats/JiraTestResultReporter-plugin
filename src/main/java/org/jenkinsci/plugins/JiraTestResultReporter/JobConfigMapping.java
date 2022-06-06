@@ -167,6 +167,8 @@ public class JobConfigMapping {
             StringFields summary = null;
             StringFields description = null;
 
+            StringFields job = null;
+
             for(AbstractFields field : this.getConfigs()) {
                 if(field instanceof StringFields) {
                     StringFields stringField = (StringFields) field;
@@ -176,6 +178,10 @@ public class JobConfigMapping {
                     if(stringField.getFieldKey().equals(DESCRIPTION_FIELD_NAME)) {
                         description = stringField;
                     }
+                    if(stringField.getFieldKey().equals(JOB_FIELD_NAME)) {
+                        job = stringField;
+                    }
+
                 }
             }
 
@@ -185,6 +191,10 @@ public class JobConfigMapping {
 
             if(description == null) {
                 this.getConfigs().add(DEFAULT_DESCRIPTION_FIELD);
+            }
+
+            if(job == null) {
+                this.getConfigs().add(DEFAULT_JOB_FIELD);
             }
 
             return this;
