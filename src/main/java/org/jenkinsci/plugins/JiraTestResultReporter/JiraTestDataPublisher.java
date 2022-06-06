@@ -328,6 +328,7 @@ public class JiraTestDataPublisher extends TestDataPublisher {
 		private Secret password = null;
         private String defaultSummary;
         private String defaultDescription;
+        private String defaultJob;
 
 
         public URI getJiraUri()     { return jiraUri;  }
@@ -341,7 +342,7 @@ public class JiraTestDataPublisher extends TestDataPublisher {
          * @return
          */
         public String getDefaultSummary() {
-             return defaultSummary != null && !defaultSummary.equals("") ? defaultSummary : DEFAULT_SUMMARY;
+            return defaultSummary != null && !defaultSummary.equals("") ? defaultSummary : DEFAULT_SUMMARY;
         }
 
         /**
@@ -351,6 +352,15 @@ public class JiraTestDataPublisher extends TestDataPublisher {
         public String getDefaultDescription() {
             return defaultDescription != null && !defaultDescription.equals("") ? defaultDescription : DEFAULT_DESCRIPTION;
         }
+
+        /**
+         * Getter for the job template
+         * @return
+         */
+        public String getDefaultJob() {
+            return defaultJob != null && !defaultJob.equals("") ? defaultJob : DEFAULT_JOB;
+        }
+
 
         /**
          * Getter for the statuses map, contains information about status category of each status
