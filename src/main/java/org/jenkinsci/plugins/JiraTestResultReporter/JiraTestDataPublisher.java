@@ -305,18 +305,22 @@ public class JiraTestDataPublisher extends TestDataPublisher {
 
         public static final String SUMMARY_FIELD_NAME = "summary";
         public static final String DESCRIPTION_FIELD_NAME = "description";
-
+        public static final String JOB_FIELD_NAME = "job";
         private static final String DEFAULT_SUMMARY = "${TEST_FULL_NAME} : ${TEST_ERROR_DETAILS}";
         private static final String DEFAULT_DESCRIPTION = "${BUILD_URL}${CRLF}${TEST_STACK_TRACE}";
+        private static final String DEFAULT_JOB = "PARENTAL_JOB"; // TODO Find default job;
         public static final List<AbstractFields> templates;
         public static final StringFields DEFAULT_SUMMARY_FIELD;
         public static final StringFields DEFAULT_DESCRIPTION_FIELD;
+        public static final StringFields DEFAULT_JOB_FIELD;
         static{
             templates = new ArrayList<AbstractFields>();
             DEFAULT_SUMMARY_FIELD = new StringFields(SUMMARY_FIELD_NAME, "${DEFAULT_SUMMARY}");
             DEFAULT_DESCRIPTION_FIELD = new StringFields(DESCRIPTION_FIELD_NAME, "${DEFAULT_DESCRIPTION}");
+            DEFAULT_JOB_FIELD = new StringFields(JOB_FIELD_NAME, "${DEFAULT_JOB}");
             templates.add(DEFAULT_SUMMARY_FIELD);
             templates.add(DEFAULT_DESCRIPTION_FIELD);
+            templates.add(DEFAULT_JOB_FIELD);
         }
 
         private transient HashMap<String, FullStatus> statuses;

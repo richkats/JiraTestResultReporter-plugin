@@ -24,6 +24,9 @@
             <f:entry title="Default Description" field="description" >
                 <f:textbox field="description" default="${descriptor.defaultDescription}"/>
             </f:entry>
+            <f:entry title="Default Job" field="job" >
+                <f:textbox field="job" default="${descriptor.defaultJob}"/>
+            </f:entry>
         </f:advanced>
     </f:section>
 </j:jelly>
