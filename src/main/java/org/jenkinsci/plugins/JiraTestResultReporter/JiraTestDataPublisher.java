@@ -431,7 +431,8 @@ public class JiraTestDataPublisher extends TestDataPublisher {
 			password = Secret.fromString(json.getString("password"));
             defaultSummary = json.getString("summary");
             defaultDescription = json.getString("description");
-
+            defaultJob = json.getString("job");
+            
             if (json.getString("jiraUrl").equals("")
                     || json.getString("username").equals("")
                     || json.getString("password").equals("")) {
