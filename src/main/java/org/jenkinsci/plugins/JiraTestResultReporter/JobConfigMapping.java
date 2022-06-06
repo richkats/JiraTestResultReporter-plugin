@@ -221,9 +221,19 @@ public class JobConfigMapping {
 
         for(Job project : Jenkins.getInstance().getItems(Job.class)) {
             JobConfigEntry entry = load(project);
+
             if (entry != null) {
-                configMap.put(project.getFullName(), entry);
-            }
+                //configMap.put(project.getFullName(), entry);
+
+                AbstractFields[] entryArray = new AbstractFields[entry.getConfigs().size()];
+                entryArray = entry.getConfigs().toArray(entryArray);
+                if (entryArray[entry.getConfigs().size() - 1] == DEFAULT_JOB_FIELD)
+                    configMap.put(project.getFullName(), entry);
+                else {
+//                    Job projectFromConfig = Jenkins.getInstance().getItemByFullName(entryArray[entry.getConfigs().size() - 1].toString()).getAllJobs().iterator().next();
+//                    JobConfigEntry entryFromConfig = load(projectFromConfig);
+                    configMap.put(entryArray[entry.getConfigs().size() - 1].toString(), entry);
+                }
         }
     }
 
